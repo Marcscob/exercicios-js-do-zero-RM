@@ -34,7 +34,9 @@ Será que este array precisa ser declarado com a palavra-chave
 let?
 */
 
-let marca = ['Apple', 'Sony', 'Samsung', 'Microsoft']
+const marcas = ['Apple', 'Sony', 'Samsung', 'Microsoft']
+
+console.log(marcas);
 
 /*
 02
@@ -48,11 +50,25 @@ Você pode modificar a forma de declaração dos valores abaixo,
 se necessário.
 */
 
-const nome = 'Friends'
-const temporadas = 10
-const episodios = 236
-const temaAbertura = `I'll Be There for You`
-const elencoPrincipal = ['Jennifer Aniston', 'Courteney Cox', 'Lisa Kudrow', 'Matt LeBlanc', 'Matthew Perry', 'David Schwimmer']
+// const nome = 'Friends'
+// const temporadas = 10
+// const episodios = 236
+// const temaAbertura = `I'll Be There for You`
+// const elencoPrincipal = ['Jennifer Aniston', 'Courteney Cox', 'Lisa Kudrow', 'Matt LeBlanc', 'Matthew Perry', 'David Schwimmer']
+
+const series = [{
+  nome: 'Friends',
+  temporadas: 34,
+  elenco:['jen', 'ross']
+},
+{
+nome:'Breaking Bad',
+temporadas: 23
+}
+]
+series[1].nome = 'Bia' 
+
+console.log(series)
 
 /*
 03
@@ -65,12 +81,15 @@ Será que a estrutura usada é ideal para organizar estas
 informações?
 */
 
-const frutas = {
-  fruta1: 'banana',
-  fruta2: 'maçã',
-  fruta3: 'pera',
-  fruta4: 'uva'
-}
+// const frutas = {
+//   fruta1: 'banana',
+//   fruta2: 'maçã',
+//   fruta3: 'pera',
+//   fruta4: 'uva'
+// }
+
+const frutas = ['banana', 'uva']
+console.log(frutas)
 
 /*
 04
@@ -78,6 +97,7 @@ const frutas = {
 Declare uma const banda e atribua a ela um objeto vazio.
 */
 
+const banda = {}
 
 
 /*
@@ -93,7 +113,8 @@ Adicione no objeto banda uma propriedade nome.
 Atribua o valor 'Led Zeppelin' para a propriedade nome.
 */
 
-
+ banda.nome = 'Led'
+ console.log(banda)
 
 /*
 06
@@ -108,7 +129,8 @@ Dica:
 O tipo de valor da propriedade deve ser uma lista.
 */
 
-
+banda.generos = ['rock', 'blues']
+console.log(banda.generos)
 
 /*
 07
@@ -125,6 +147,9 @@ Dica:
 Use um boolean para indicar que a banda não está na ativa.
 */
 
+banda.estaNaAtiva = false;
+console.log(banda.estaNaAtiva)
+
 
 
 /*
@@ -135,7 +160,7 @@ Adicione no objeto banda uma propriedade albuns.
 A propriedade albuns deve armazenar 2 objetos com 
 as seguintes propriedades...
 
-Primeiro objeto:
+Primeiro objeto:v
 - nome, que armazena Houses of the Holy
 - ano, que armazena 1973
 - capa, que armazena https://upload.wikimedia.org/wikipedia/en/9/9f/Led_Zeppelin_-_Houses_of_the_Holy.jpg
@@ -152,7 +177,17 @@ O tipo de valor da propriedade albuns deve ser uma lista.
 O tipo de valor das propriedades capa deve ser uma string.
 */
 
-
+banda.albuns = [
+  {
+    name: 'Holy'
+    
+  },
+  {
+    name: 'Graffiti',
+    ano: 1975
+  }
+]
+console.log(banda.albuns)
 
 /*
 09
@@ -161,7 +196,8 @@ Abaixo deste comentário, modifique o valor da propriedade ano
 do album Physical Graffiti para 1976.
 */
 
-
+banda.albuns[1].ano=1873
+console.log(banda.albuns[1].ano)
 
 /*
 10
@@ -197,7 +233,8 @@ const pokemon = {
     }
   ]
 }
-
+const firstChar = pokemon.moves[0].versionGroupDetails[1].versionGroup.url[0]
+console.log(firstChar)
 /*
 11
 
@@ -226,3 +263,6 @@ Dica:
 
 Use interpolações.
 */
+const paragrafo = `Nesta bateria de exercícios vimos que marca armazena um array no qual o segundo item é ${marcas[1]}, um dos gêneros da banda ${banda.nome} é ${banda.generos[0]} e que a propriedade moveLearnMethod do Articuno contém um objeto com uma propriedade name que armazena ${pokemon.moves[0].versionGroupDetails[1].moveLearnMethod.name}.` 
+
+console.log(paragrafo)
