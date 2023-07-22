@@ -210,18 +210,10 @@ A expressão que você irá escrever deve retornar o caractere 'h'.
 
 const pokemon = {
   name: "Articuno",
-  moves: [
-    {
-      move: {
-        name: "razor-wind",
-        url: "https://pokeapi.co/api/v2/move/13/"
-      },
-      versionGroupDetails: [
-        {},
-        {
-          levelLearnedAt: 0,
-          moveLearnMethod: {
-            name: "machine",
+  moves: [{move: { name: "razor-wind", url: "https://pokeapi.co/api/v2/move/13/"},
+      versionGroupDetails: [{},
+        { levelLearnedAt: 0, moveLearnMethod: { 
+          name: "machine",
             url: "https://pokeapi.co/api/v2/move-learn-method/4/"
           },
           versionGroup: {
@@ -266,3 +258,5 @@ Use interpolações.
 const paragrafo = `Nesta bateria de exercícios vimos que marca armazena um array no qual o segundo item é ${marcas[1]}, um dos gêneros da banda ${banda.nome} é ${banda.generos[0]} e que a propriedade moveLearnMethod do Articuno contém um objeto com uma propriedade name que armazena ${pokemon.moves[0].versionGroupDetails[1].moveLearnMethod.name}.` 
 
 console.log(paragrafo)
+
+console.log(pokemon.moves[0].versionGroupDetails[1].versionGroup.url[3])

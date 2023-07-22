@@ -27,10 +27,10 @@ exportado.
 */
 
 function y () {
-  '7'
+  return 7 
 }
 
-console.log(y() === 7)
+y() === 7
 
 /*
 02
@@ -38,6 +38,7 @@ console.log(y() === 7)
 Declare uma variável contador e atribua o número um a ela. 
 */
 
+let cont = 1;
 
 
 /*
@@ -50,7 +51,9 @@ por cem.
 Use o operador abreviado para fazer a reatribuição.
 */
 
-
+function multiplic () {
+  cont *= 100
+}
 
 /*
 04
@@ -62,6 +65,9 @@ por quatro.
 Use o operador abreviado para fazer a reatribuição.
 */
 
+function divCont () {
+  cont /= 4
+}
 
 
 /*
@@ -72,6 +78,10 @@ em um.
 
 Use o operador de pré incremento.
 */
+
+function increment() {
+  ++cont
+}
 
 
 
@@ -84,14 +94,16 @@ em um.
 Use o operador de pré decremento.
 */
 
-
+function decremet() {
+  --cont
+}
 
 /*
 07
 
 Execute a função multiplicaContador.
 */
-
+multiplic()
 
 
 /*
@@ -100,6 +112,12 @@ Execute a função multiplicaContador.
 Crie uma função pegaSetenta que retorna um objeto com uma 
 propriedade numero que armazena o número setenta.
 */
+
+function pegaSetenta() {
+  return {
+    numero: 70
+  }
+}
 
 
 
@@ -110,7 +128,7 @@ Use o retorno da função pegaSetenta para comparar se o valor
 da propriedade numero é maior ou igual a contador.
 */
 
-
+pegaSetenta().numero >= cont;
 
 /*
 10
@@ -118,6 +136,7 @@ da propriedade numero é maior ou igual a contador.
 Divida o contador por quatro usando a função que você criou.
 */
 
+divCont()
 
 
 /*
@@ -127,6 +146,9 @@ Incremente o contador em um usando a função que você criou.
 */
 
 
+increment()
+
+
 
 /*
 12
@@ -134,7 +156,7 @@ Incremente o contador em um usando a função que você criou.
 Decremente o contador em um usando a função que você criou.
 */
 
-
+decremet()
 
 /*
 13
@@ -147,7 +169,9 @@ Dica:
 Use uma estrutura de lista.
 */
 
-
+function pegaNumeros () {
+  return [34, 95, 37]
+}
 
 /*
 14
@@ -155,3 +179,4 @@ Use uma estrutura de lista.
 Use o retorno da função pegaNumeros para comparar se o valor 
 do terceiro número do array é diferente de contador.
 */
+ pegaNumeros()[2] !== cont
