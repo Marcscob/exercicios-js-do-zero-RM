@@ -159,11 +159,11 @@ const pegaPontuacao = (respostasUsuario) => {
         
     if (lastIndexArr === 'A') {
         return 50
-    } else if (lastIndexArr === 'C') {
-        return 25
-    }else {
-        return 100
     }
+    if (lastIndexArr === 'C') {
+        return 25
+    }
+        return 100
 }
 
 /*
