@@ -16,7 +16,17 @@ Crie uma função que recebe dois parâmetros e retorna o resultado
 da multiplicação deles.
 */
 
+const multiplic  = (num1, num2) => {
+    return num1 * num2
+}
 
+multiplic(3, 4)
+
+//outra forma de escrever
+
+const multiplic2 = (x, y) => x * y; //implicit return
+
+multiplic2(5, 5)
 
 /*
 02
@@ -32,7 +42,12 @@ os números do objeto.
 A invocação da função deve retornar 21.
 */
 
+const obj = {
+    num3: 7,
+    num4: 3
+}
 
+multiplic(obj.num3, obj.num4)
 
 /*
 03
@@ -47,7 +62,9 @@ argumentos os números do array.
 A invocação da função deve retornar 35.
 */
 
+const arr1 = [5, 7];
 
+multiplic(arr1[0], arr1[1])
 
 /*
 04
@@ -65,7 +82,8 @@ A invocação da função que você criou no exercício 01 deve
 retornar 27.
 */
 
-
+const pegaNumerosImpares = () => [5, 3, 9];
+multiplic(pegaNumerosImpares()[1], pegaNumerosImpares()[2])
 
 /*
 05
@@ -89,6 +107,18 @@ A invocação da função que você criou no exercício 01 deve
 retornar 12.
 */
 
+const pegaObj = () => [
+    {
+        numero: 2
+    },
+    {
+        numero: 4
+    },
+    {
+        numero: 6
+    }
+]
+multiplic(pegaObj()[0].numero, pegaObj()[2].numero)
 
 
 /*
@@ -98,7 +128,7 @@ Crie uma função pegaRespostasUsuario que retorna um array com os
 itens 'A', 'B', 'A' e 'D'.
 */
 
-
+const pegaRespostasUsuario = () => ['A','B','A','D']
 
 /*
 07
@@ -124,7 +154,17 @@ Senão, atribua a pontuacao o valor que ela tem somado a 100.
 Na última linha dentro do bloco da função, retorne pontuacao.
 */
 
-
+const pegaPontuacao = (respostasUsuario) => {
+    const lastIndexArr = respostasUsuario[3]
+        
+    if (lastIndexArr === 'A') {
+        return 50
+    } else if (lastIndexArr === 'C') {
+        return 25
+    }else {
+        return 100
+    }
+}
 
 /*
 08
@@ -137,7 +177,9 @@ Invoque pegaPontuacao e passe respostasUsuario como argumento.
 A invocação de pegaPontuacao deve retornar 100.
 */
 
+const respostasUsuario = pegaRespostasUsuario()
 
+pegaPontuacao(respostasUsuario)
 
 /*
 09
