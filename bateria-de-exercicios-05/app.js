@@ -23,13 +23,21 @@ Após consertar, a expressão deve retornar o número 7.
 */
 
 const objs = [
-  { x: 1, y: 2 },
-  { x: 3, y: 4 },
-  { x: 5, y: 6 },
-  { x: 7, y: 8 }
+  { x: 1, 
+    y: 2 
+  },
+  { x: 3, 
+    y: 4 
+  },
+  { x: 5, 
+    y: 6 
+  },
+  { x: 7, 
+    y: 8 
+  }
 ]
 
-objs[4].x
+objs[3].x
 
 /*
 02
@@ -45,14 +53,14 @@ Após consertar, a expressão deve retornar o caractere w.
 const obj = {
   x: () => 'y',
   y: function () { 
-    'w'
+    return 'w'
   },
-  w () { 
+  w: () => { 
     return 'x'
   }
 }
 
-obj.z()
+ obj.y()
 
 /*
 03
@@ -65,6 +73,14 @@ ser um valor diferente do anterior.
 
 Faça com que uma das invocações retorne true.
 */
+
+  const eNull = arg => arg === null
+
+  eNull(); //false pq não há argumento. Undefined === null é false
+
+  eNull(null)
+  
+  eNull({})
 
 /*
 04
@@ -81,6 +97,21 @@ preenchidos, a função deve retornar a string abaixo:
 3. O retorno da função deve ser a multiplicação dos 3 
 argumentos.
 */
+
+const multiplic3 = (a,b,c) => {
+  
+  if(a === undefined || b === undefined || c === undefined) {
+    
+    return 'Insira todos os argumentos!'
+    
+} 
+  return a * b * c
+  
+}
+multiplic3(3,4)
+multiplic3(5,2,6)
+
+
 
 /*
 05
@@ -99,13 +130,30 @@ envolver apenas as linhas de código dentro do bloco da
 função. 
 */
 
+//const y = w => { //w recebe o array passado na invocação
+
+  //if aninhados - todos devem ser = true para q o log exiba a msg
+  // if (w[2] === false) {
+  //   if ('b' === w[0]) {
+  //     if (w[1] === 3) {
+  //       console.log('Executou if!')
+  //     }
+  //   }
+  // } assim podemos escrever
+
+//   if (w[2] === false && 'b' === w[0]&& w[1] === 3){
+//     console.log('Executou if!')
+//   }
+// }
+//porém há uma forma ainda mais legível
+
 const y = w => {
-  if (w[2] === false) {
-    if ('b' === w[0]) {
-      if (w[1] === 3) {
-        // console.log('Executou if!')
-      }
-    }
+  const igualFalse = w[2] === false
+  const igualB = 'b' === w[0]
+  const igual3 = w[1] === 3
+  
+  if(igualFalse && igualB && igual3) {
+    console.log('Executou if!')
   }
 }
 
